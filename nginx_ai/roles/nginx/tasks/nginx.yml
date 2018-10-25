@@ -4,20 +4,17 @@
 	
   - name: make install nginx
     shell: cd {{ download_dir }}/nginx-1.12.2/ && ./configure --prefix={{ app_dir }}/nginx --with-http_ssl_module --with-http_stub_status_module && make && make install
-	
+
   - name: copy nginx config file to remote hosts
     template: src=nginx_01.conf dest={{ app_dir }}/nginx/conf/nginx.conf
-	
+
   - name: copy nginx.service file to remote hosts
     template: src=nginx.service dest=/lib/systemd/system/
-	
+
   - name: add nginx service to system auto start
     shell: systemctl enable nginx.service
     notify:
          - restart nginx service
-	
+
   - name: ensure nginx service is running
     service: name=nginx state=started
-	
-
-	
