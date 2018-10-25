@@ -12,7 +12,7 @@
     shell: sh set_jdk.sh
 
   - name: source bash_profile
-    shell: source /etc/profile
-	
+    shell: source /etc/profile	
+ 
   - name: remove files
     file: name=set_jdk.sh state=absent
