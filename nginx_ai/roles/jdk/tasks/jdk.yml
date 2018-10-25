@@ -15,6 +15,4 @@
     shell: source /etc/profile
 	
   - name: remove files
-    shell: rm -rf set_jdk.sh
-	
-	
+    file: name=set_jdk.sh state=absent
