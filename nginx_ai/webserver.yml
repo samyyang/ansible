@@ -4,4 +4,6 @@
   roles:
       - common
       - { role: nginx,tags: nginx }
-      #- { role: nginx,tags: nginx }
+      - { role: jdk,tags: jdk }
+      - { role: tomcat,tags: tomcat }
+	  

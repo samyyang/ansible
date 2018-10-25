@@ -1,0 +1,20 @@
+---
+  - name: mkdir jdk dest dir
+    file: path={{ jdk_dir }} state=directory
+
+  - name: unzip jdk package to remote hosts
+    unarchive: src=jdk-7u79-linux-x64.tar.gz dest={{ jdk_dir }}
+
+  - name: copy set jdk environment file to remote hosts
+    template: src=set_jdk.sh dest=./set_jdk.sh
+
+  - name: execute script to set jdkenv
+    shell: sh set_jdk.sh
+
+  - name: source bash_profile
+    shell: source /etc/profile
+	
+  - name: remove files
+    shell: rm -rf set_jdk.sh
+	
+	

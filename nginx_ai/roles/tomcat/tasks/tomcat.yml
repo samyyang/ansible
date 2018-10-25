@@ -1,0 +1,9 @@
+---
+  - name: unzip tomcat package to remote hosts
+    unarchive: src=apache-tomcat-7.0.90.tar.gz dest={{ app_dir }}
+
+  - name: copy tomcat config file to remote hosts
+    template: src=tomcat_01.xml dest={{ app_dir }}/tomcat/conf/server.xml
+
+    notify:
+         - start tomcat service

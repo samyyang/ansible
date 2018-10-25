@@ -1,0 +1,2 @@
+- name: start tomcat service
+  shell: ./{{ app_dir }}/tomcat/bin/startup.sh
