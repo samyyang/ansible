@@ -1,0 +1,4 @@
+[nginx_hosts]
+10.7.5.17:22 ansible_ssh_user=root ansible_ssh_pass='sxappopt@123'
+[nginx_hosts:vars]
+filename = hostname

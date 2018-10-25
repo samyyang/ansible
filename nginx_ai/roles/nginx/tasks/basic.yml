@@ -1,0 +1,10 @@
+---
+- name: install basic parket for nginx
+  yum: name={{ item }} state=latest
+  with_items:
+      - gcc
+      - openssl-devel 
+      - pcre
+      - pcre-devel
+	  
+	  
