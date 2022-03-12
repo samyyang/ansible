@@ -1,0 +1,10 @@
+---
+
+- name: check_log4j
+  become: yes
+  become_method: su
+  become_user: root
+  hosts: default
+  gather_facts: no
+  roles:
+    - check_log4j
