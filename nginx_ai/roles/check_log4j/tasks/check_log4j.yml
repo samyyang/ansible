@@ -1,0 +1,13 @@
+---
+- name: check_log4j
+  find:
+    path: "/"
+    file_type: "file"
+    recurse: yes
+    patterns: 'hosts'
+  register: find_file
+
+- name: print find file
+  debug:
+    msg: "{{ item.path }}"
+  with_list: "{{ find_file.files }}"
