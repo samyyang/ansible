@@ -1,0 +1,2 @@
+[default]
+192.168.56.3 ansible_ssh_user=paas ansible_ssh_pass=1
